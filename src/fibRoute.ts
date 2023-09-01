@@ -5,7 +5,8 @@ import fibonacci from "./fib";
 export default (req: Request, res: Response) => {
   const { num } = req.params;
 
-  const fibN = fibonacci(parseInt(num, 10));
+  const numAsInt: number = parseInt(num, 10);
+  const fibN: number = fibonacci(numAsInt);
   let result = `fibonacci(${num}) is ${fibN}`;
 
   if (fibN < 0) {
